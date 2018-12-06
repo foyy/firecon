@@ -28,6 +28,25 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
     </div>
+    <div
+      style={{
+        margin: '0 auto',
+        maxWidth: 1200,
+        padding: '1.70rem 3.0rem',
+      }}
+    >
+      <h2>
+        <Link
+          to="/about/"
+          style={{
+            color: 'white',
+            textDecoration: 'none',
+          }}
+        >
+          About I Am Testing
+        </Link>
+      </h2>
+    </div>
   </div>
 )
 

@@ -58,17 +58,20 @@ const Checkout = class extends React.Component {
       amount: amount,
       description: 'A product well worth your time',
       token: token => {
-        fetch(`AWS_LAMBDA_URL`, {
-          method: 'POST',
-          mode: 'no-cors',
-          body: JSON.stringify({
-            token,
-            amount,
-          }),
-          headers: new Headers({
-            'Content-Type': 'application/json',
-          }),
-        })
+        fetch(
+          `https://g0q0sby444.execute-api.us-east-1.amazonaws.com/dev/checkout`,
+          {
+            method: 'POST',
+            mode: 'no-cors',
+            body: JSON.stringify({
+              token,
+              amount,
+            }),
+            headers: new Headers({
+              'Content-Type': 'application/json',
+            }),
+          }
+        )
           .then(res => {
             console.log('Transaction processed successfully')
             this.resetButton()
